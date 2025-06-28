@@ -2,15 +2,15 @@
 
 cd /Users/shanks/Documents/Projects/cheatingHehe
 
-# Random 0,1,2
-RAND=$(( RANDOM % 3 ))
+# Random file (or always the same if you want)
+FILE="activity_log.txt"
+echo "$(date): random update" >> "$FILE"
 
-if [ "$RAND" -eq 0 ]; then
-    echo "$(date): random update" >> activity_log.txt
-    git add activity_log.txt
-    git commit -m "Auto commit on $(date '+%Y-%m-%d %H:%M:%S')"
-    git push origin main
-else
-    echo "No commit this time: $(date)" >> commit_log.txt
-fi
+# Random commit message
+MESSAGES=("update $FILE" "minor change" "random edit" "fix typo" "improve $FILE" "small tweak" "auto update" "log entry" "update content" "adjustments")
+MSG=${MESSAGES[$(( RANDOM % ${#MESSAGES[@]} ))]}
+
+git add "$FILE"
+git commit -m "$MSG"
+git push origin main
 

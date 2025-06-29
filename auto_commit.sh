@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /Users/shanks/Documents/Projects/cheatingHehe
+cd /Users/shanks/bin
 
 FILE="activity_log.txt"
 echo "$(date): Sankalp started working." >> "$FILE"

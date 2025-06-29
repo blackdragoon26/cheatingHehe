@@ -1,14 +1,16 @@
 #!/bin/bash
 
-cd /Users/shanks/bin
+
+cd /Users/shanks/bin || exit 1
+
 
 FILE="activity_log.txt"
-echo "$(date): Sankalp started working." >> "$FILE"
-
-# Construct commit message
-MSG="Today Sankalp started working at $(date)"
+echo "Today Sankalp started working at $(date)" >> "$FILE"
 
 git add "$FILE"
-git commit -m "$MSG"
+git commit -m "Today Sankalp started working at $(date)"
+
+
+git pull --rebase origin main
 git push origin main
 

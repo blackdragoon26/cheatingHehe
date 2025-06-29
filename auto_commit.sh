@@ -2,13 +2,11 @@
 
 cd /Users/shanks/Documents/Projects/cheatingHehe
 
-# Random file (or always the same if you want)
 FILE="activity_log.txt"
-echo "$(date): random update" >> "$FILE"
+echo "$(date): Sankalp started working." >> "$FILE"
 
-# Random commit message
-MESSAGES=("update $FILE" "minor change" "random edit" "fix typo" "improve $FILE" "small tweak" "auto update" "log entry" "update content" "adjustments")
-MSG=${MESSAGES[$(( RANDOM % ${#MESSAGES[@]} ))]}
+# Construct commit message
+MSG="Today Sankalp started working at $(date)"
 
 git add "$FILE"
 git commit -m "$MSG"

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-cd /Users/shanks/bin || exit 1
+cd /Users/sankalpjha/bin/cheatingHehe || exit 1
 
 
 FILE="activity_log.txt"
